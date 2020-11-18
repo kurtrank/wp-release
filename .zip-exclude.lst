@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.sample
+.git/*
+.gitattributes
+.gitignore
+.npmrc
+.zip-exclude.lst
+.release-prep.sh
+.releaserc
+.github/*
+node_modules/*
+src/*
+gulpfile.js
+package.json
+package-lock.json

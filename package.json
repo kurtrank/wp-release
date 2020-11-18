@@ -1,0 +1,32 @@
+{
+	"name": "wp-release",
+	"version": "0.0.1",
+	"description": "Wrapper around semantic-release to easily version WordPress themes and plugins according to semver and generate an automatic changelog based on commits",
+	"main": "release.config.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kurtrank/wp-release.git"
+	},
+	"author": "Kurt Rank",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kurtrank/wp-release/issues"
+	},
+	"homepage": "https://github.com/kurtrank/wp-release#readme",
+	"dependencies": {
+		"@commitlint/cli": "^8.3.5",
+		"@commitlint/config-conventional": "^8.3.4",
+		"@semantic-release/changelog": "^5.0.0",
+		"@semantic-release/exec": "^5.0.0",
+		"@semantic-release/git": "^9.0.0",
+		"commitizen": "^4.2.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"husky": "^4.3.0",
+		"json": "^9.0.6",
+		"replace-in-file": "^5.0.2",
+		"semantic-release": "^17.2.2"
+	}
+}
