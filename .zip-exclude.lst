@@ -8,6 +8,7 @@
 .zip-exclude.lst
 .release-prep.sh
 .releaserc
+.huskyrc.js
 .github/*
 node_modules/*
 src/*
