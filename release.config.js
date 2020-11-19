@@ -1,7 +1,4 @@
-var packagejson = require("./package.json");
-var path = require("path");
-var appDir = path.dirname(require.main.filename);
-console.log(appDir);
+const { root: projectRoot, name: projectName } = require("./utils/project");
 
 module.exports = {
 	plugins: [
@@ -16,7 +13,9 @@ module.exports = {
 		[
 			"@semantic-release/exec",
 			{
-				prepareCmd: "sh ./.release-prep.sh ${nextRelease.version}",
+				prepareCmd:
+					`node ${projectRoot}/node_modules/wp-release/release-prep.js` +
+					" ${lastRelease.version} ${nextRelease.version}",
 			},
 		],
 		[
@@ -37,9 +36,9 @@ module.exports = {
 			{
 				assets: [
 					{
-						path: "../tux-wp-child.zip",
-						name: "tux-wp-child-${nextRelease.version}.zip",
-						label: "tux-wp-child-${nextRelease.version}",
+						path: `../${projectName}.zip`,
+						name: projectName + "-${nextRelease.version}.zip",
+						label: projectName + "-${nextRelease.version}",
 					},
 				],
 			},
