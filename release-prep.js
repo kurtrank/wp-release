@@ -14,14 +14,14 @@ const { root: projectRoot, name: projectName } = require("./utils/project");
 
 const args = process.argv.slice(2);
 
-if (!args[0] || !args[1]) {
+if (!args[0]) {
 	console.log(
-		"Missing arguments! Arguments should be supplied in the following format: `release-prep lastRelease nextRelease`"
+		"Missing arguments! Arguments should be supplied in the following format: `release-prep lastRelease nextRelease` or `release-prep nextRelease` for initial version"
 	);
 	process.exitCode = 1;
 } else {
-	const lastRelease = args[0];
-	const nextRelease = args[1];
+	const lastRelease = args[1] ? args[0] : false;
+	const nextRelease = args[1] ? args[1] : args[0];
 
 	// update style.css
 	const options = {
