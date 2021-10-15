@@ -6,7 +6,6 @@
 const replace = require("replace-in-file");
 const { writeFileSync, existsSync, createWriteStream } = require("fs");
 const archiver = require("archiver");
-const spawn = require("cross-spawn");
 
 /**
  * Internal Dependencies
