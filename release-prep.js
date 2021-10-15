@@ -23,8 +23,10 @@ if (!args[0]) {
 	const lastRelease = args[1] ? args[0] : false;
 	const nextRelease = args[1] ? args[1] : args[0];
 
-	const package = require(`${projectRoot}/package.json`);
-	const packageLock = require(`${projectRoot}/package-lock.json`);
+	const packageFile = `${projectRoot}/package.json`;
+	const packageLockFile = `${projectRoot}/package-lock.json`;
+	const package = require(packageFile);
+	const packageLock = require(packageLockFile);
 
 	const wpFile = package.config?.wpRelease?.entryFile
 		? package.config?.wpRelease?.entryFile
@@ -73,7 +75,7 @@ if (!args[0]) {
 	});
 
 	output.on("close", function () {
-		console.log(`zip file created: ${archive.pointer()} total bytes`);
+		console.log(`zip file created: ${zip.pointer()} total bytes`);
 	});
 
 	zip.on("warning", function (err) {
@@ -87,16 +89,16 @@ if (!args[0]) {
 
 	zip.pipe(output);
 
-	ignoreList = package.config?.wpRelease?.ignore ?? [
+	const ignoreList = package.config?.wpRelease?.ignore ?? [
 		".DS_Store",
 		".env",
 		".env.sample",
-		".git/*",
-		".github/*",
+		".git/**",
+		".github/**",
 		".gitignore",
 		".huskyrc.js",
 		".releaserc",
-		"node_modules/*",
+		"node_modules/**",
 		"release.config.js",
 	];
 
