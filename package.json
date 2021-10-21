@@ -34,5 +34,15 @@
 		"extends": [
 			"@commitlint/config-conventional"
 		]
+	},
+	"release": {
+		"extends": "./release.config.js",
+		"branches": [
+			"main",
+			{
+				"name": "beta",
+				"prerelease": true
+			}
+		]
 	}
 }
