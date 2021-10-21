@@ -39,8 +39,8 @@ if (!args[0]) {
 	if (wpFile) {
 		const options = {
 			files: wpFile,
-			from: /Version: (.*)/g,
-			to: `Version: ${nextRelease}`,
+			from: /Version:(\s*)(.*)/g,
+			to: `Version:$1${nextRelease}`,
 		};
 
 		try {
