@@ -2,7 +2,7 @@
 	"name": "wp-release",
 	"version": "0.0.2",
 	"description": "Wrapper around semantic-release to easily version WordPress themes and plugins according to semver and generate an automatic changelog based on commits",
-	"main": "release.config.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

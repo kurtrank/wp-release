@@ -1,13 +1,6 @@
-// This is used to actually release this project. `release.config.js` is used for WordPress projects that depend on this.
+const { root: projectRoot, name: projectName } = require("./utils/project");
 
 module.exports = {
-	branches: [
-		"main",
-		{
-			"name": "beta",
-			"prerelease": true
-		}
-	],
 	plugins: [
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
@@ -17,15 +10,20 @@ module.exports = {
 				changelogFile: "CHANGELOG.md",
 			},
 		],
-		["@semantic-release/npm", {
-			"npmPublish": false,
-			tarballDir: "dist",
-		}],
+		[
+			"@semantic-release/exec",
+			{
+				prepareCmd:
+					`node ${projectRoot}/node_modules/wp-release/release-prep.js` +
+					" ${lastRelease.version} ${nextRelease.version}",
+			},
+		],
 		[
 			"@semantic-release/git",
 			{
 				assets: [
 					"CHANGELOG.md",
+					"style.css",
 					"package.json",
 					"package-lock.json",
 				],
@@ -36,7 +34,13 @@ module.exports = {
 		[
 			"@semantic-release/github",
 			{
-				assets: "dist/*.tgz"
+				assets: [
+					{
+						path: `../${projectName}.zip`,
+						name: projectName + "-${nextRelease.version}.zip",
+						label: projectName + "-${nextRelease.version}",
+					},
+				],
 			},
 		],
 	],

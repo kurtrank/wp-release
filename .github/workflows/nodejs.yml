@@ -28,4 +28,4 @@ jobs:
           GIT_COMMITTER_NAME: kurtrank
           GIT_COMMITTER_EMAIL: kurtrank@gmail.com
           IS_CI: true
-        run: npx semantic-release --extends ./internal-release.config.js
+        run: npx semantic-release --extends "./internal-release.config.js"
