@@ -60,17 +60,17 @@ The default ignore list is:
 
 ```json
 [
-".DS_Store",
-".env",
-".env.sample",
-".git/**",
-".github/**",
-".gitignore",
-".huskyrc.js",
-".releaserc",
-"node_modules/**",
-"release.config.js",
-];
+	".DS_Store",
+	".env",
+	".env.sample",
+	".git/**",
+	".github/**",
+	".gitignore",
+	".huskyrc.js",
+	".releaserc",
+	"node_modules/**",
+	"release.config.js",
+]
 ```
 
 #### semantic-release
