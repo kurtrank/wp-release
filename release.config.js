@@ -33,11 +33,11 @@ module.exports = {
 					"chore(release): ${nextRelease.version}\n\n${nextRelease.notes}",
 			},
 		],
-		// [
-		// 	"@semantic-release/github",
-		// 	{
-		// 		assets: "dist/*.tgz"
-		// 	},
-		// ],
+		[
+			"@semantic-release/github",
+			{
+				assets: "dist/*.tgz"
+			},
+		],
 	],
 };
