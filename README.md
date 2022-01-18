@@ -7,7 +7,7 @@ This module is a wrapper around [semantic-release](https://semantic-release.gitb
 ### Install Package
 
 ```sh
-npm install kurtrank/wp-release
+npm install kurtrank/wp-release --save-dev
 ```
 
 ### Initial Config
