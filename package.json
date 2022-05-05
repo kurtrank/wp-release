@@ -1,6 +1,6 @@
 {
 	"name": "wp-release",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Wrapper around semantic-release to easily version WordPress themes and plugins according to semver and generate an automatic changelog based on commits",
 	"main": "index.js",
 	"scripts": {

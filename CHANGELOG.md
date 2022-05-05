@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/kurtrank/wp-release/compare/v0.1.0...v0.1.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* add .npm to ignore list  ([#2](https://github.com/kurtrank/wp-release/issues/2)) ([22a02ab](https://github.com/kurtrank/wp-release/commit/22a02ab09c895914ae8063f55d1a72da70b63686))
+
 # [0.1.0](https://github.com/kurtrank/wp-release/compare/v0.0.2...v0.1.0) (2021-10-21)
 
 
