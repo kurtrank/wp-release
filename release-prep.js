@@ -95,7 +95,7 @@ if (!args[0]) {
 		".env.sample",
 		".git/**",
 		".github/**",
-		".npm/**"
+		".npm/**",
 		".gitignore",
 		".huskyrc.js",
 		".releaserc",
