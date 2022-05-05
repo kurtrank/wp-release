@@ -65,6 +65,7 @@ The default ignore list is:
 	".env.sample",
 	".git/**",
 	".github/**",
+	".npm/**",
 	".gitignore",
 	".huskyrc.js",
 	".releaserc",
